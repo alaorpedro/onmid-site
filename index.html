@@ -14,7 +14,8 @@
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
         <a class="brand" href="#home" aria-label="Onmid">
-          <img src="assets/logo-onmid-white.png" alt="Onmid">
+          <img class="brand-logo brand-logo-light" src="assets/logo-onmid-white.png" alt="Onmid">
+          <img class="brand-logo brand-logo-dark" src="assets/logo-onmid-dark.png" alt="Onmid">
         </a>
         <nav class="desktop-nav" aria-label="Navegação principal">
           <a href="#solutions">Soluções</a>
@@ -40,55 +41,66 @@
 
     <main>
       <section class="hero" id="home">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-left" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-right" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-content">
-            <p class="eyebrow">Marketing, vendas e tecnologia</p>
-            <h1>Onmid</h1>
-            <p class="hero-lead">Estruturamos crescimento digital com estratégia, performance, conteúdo, automação e integração comercial.</p>
+            <p class="hero-pretitle">Mais que uma agencia digital</p>
+            <h1>Marketing, vendas e tecnologia para crescer.</h1>
+            <div class="hero-underline" aria-hidden="true"></div>
+            <p class="hero-lead">A Onmid integra estratégia, performance, conteúdo, automação e operação comercial para transformar presença digital em resultado.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Falar com especialista</a>
               <a class="btn btn-ghost" href="#method">Conhecer o método</a>
             </div>
-            <div class="hero-metrics" aria-label="Indicadores da Onmid">
-              <div>
-                <strong>10+</strong>
-                <span>áreas integradas</span>
-              </div>
-              <div>
-                <strong>BR + PT</strong>
-                <span>operação internacional</span>
-              </div>
-              <div>
-                <strong>6</strong>
-                <span>etapas de execução</span>
-              </div>
+          </div>
+          <div class="hero-visual" aria-label="Ecossistema Onmid">
+            <div class="visual-backdrop"></div>
+            <div class="visual-device">
+              <img src="assets/wallpaper-onmid.jpg" alt="">
+            </div>
+            <div class="growth-ring">
+              <span>Growth</span>
+              <strong>OS</strong>
+            </div>
+            <div class="floating-icon icon-one">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6m0 12h16M8 14l3-3 3 2 5-6"></path></svg>
+            </div>
+            <div class="floating-icon icon-two">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18m7-14H9.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 0 1 0 7H5"></path></svg>
+            </div>
+            <div class="floating-icon icon-three">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z"></path><path d="m9 12 2 2 4-5"></path></svg>
             </div>
           </div>
-          <div class="hero-panel" aria-label="Ecossistema Onmid">
-            <div class="panel-top">
-              <span>Ecossistema ativo</span>
-              <strong>Growth OS</strong>
-            </div>
-            <div class="signal-card signal-card-primary">
-              <span>Marketing</span>
-              <strong>Campanhas, conteúdo e tráfego</strong>
-            </div>
-            <div class="signal-grid">
-              <div class="signal-card">
-                <span>Vendas</span>
-                <strong>Processo e conversão</strong>
+          <div class="hero-feature-row">
+            <article class="hero-feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6"></path></svg>
               </div>
-              <div class="signal-card">
-                <span>Tech</span>
-                <strong>Sites, sistemas e IA</strong>
+              <div>
+                <h3>Marketing e performance</h3>
+                <p>Campanhas, conteúdo, tráfego e métricas trabalhando juntos.</p>
               </div>
-            </div>
-            <div class="progress-list">
-              <div><span></span> Diagnóstico e setup</div>
-              <div><span></span> Laboratório de tráfego</div>
-              <div><span></span> Acompanhamento de performance</div>
-            </div>
+            </article>
+            <article class="hero-feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 7v13m10-13v13M6 20h12M9 11h2m2 0h2m-6 4h2m2 0h2"></path></svg>
+              </div>
+              <div>
+                <h3>Vendas e operação</h3>
+                <p>Processo comercial, CRM, qualificação e conversão.</p>
+              </div>
+            </article>
+            <article class="hero-feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z"></path><path d="m9 12 2 2 4-5"></path></svg>
+              </div>
+              <div>
+                <h3>Sites, sistemas e IA</h3>
+                <p>Estrutura digital para automatizar e escalar.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
