@@ -4,6 +4,8 @@ const mobileNav = document.getElementById("mobileNav");
 const contactForm = document.getElementById("contactForm");
 const scrollProgress = document.getElementById("scrollProgress");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const glowCards = document.querySelectorAll(".solution-card, .case-card, .hero-feature-card, .story-steps article");
+const counters = document.querySelectorAll("[data-count]");
 
 function updateHeader() {
   siteHeader.classList.toggle("scrolled", window.scrollY > 24);
@@ -76,7 +78,7 @@ window.addEventListener("scroll", updateScrollEffects, { passive: true });
 window.addEventListener("resize", updateScrollEffects);
 
 const revealTargets = document.querySelectorAll(
-  ".hero-content, .hero-visual, .hero-feature-card, .clients-section, .intro-grid, .experience-copy, .phone-stage, .story-steps article, .section-header, .solution-card, .method-copy, .timeline article, .case-card, .location-strip, .faq-grid, .contact-card"
+  ".hero-content, .hero-visual, .hero-feature-card, .clients-section, .metric-tile, .intro-grid, .experience-copy, .phone-stage, .story-steps article, .section-header, .solution-card, .method-copy, .timeline article, .case-card, .location-strip, .faq-grid, .contact-card"
 );
 
 revealTargets.forEach((element) => element.classList.add("reveal"));
@@ -96,6 +98,44 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealTargets.forEach((element) => revealObserver.observe(element));
+
+glowCards.forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+    card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+  });
+});
+
+const countObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+      const target = Number(element.dataset.count);
+      const prefix = element.dataset.prefix || "";
+      const suffix = element.dataset.suffix || "";
+      const duration = 1100;
+      const start = performance.now();
+
+      function animate(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+        element.textContent = `${prefix}${value}${suffix}`;
+
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+      countObserver.unobserve(element);
+    });
+  },
+  { threshold: 0.6 }
+);
+
+counters.forEach((counter) => countObserver.observe(counter));
 
 updateHeader();
 updateScrollEffects();
