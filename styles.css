@@ -344,8 +344,8 @@ h3 {
   position: absolute;
   right: 7%;
   bottom: 30px;
-  width: min(70%, 420px);
-  aspect-ratio: 0.82;
+  width: min(76%, 470px);
+  aspect-ratio: 0.9;
   border-radius: 999px 999px 18px 18px;
   background: #ffffff;
   padding: 12px;
@@ -358,7 +358,7 @@ h3 {
   height: 100%;
   border-radius: 999px 999px 12px 12px;
   object-fit: cover;
-  object-position: center;
+  object-position: 58% center;
 }
 
 .visual-device::after {
