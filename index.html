@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
         <a class="brand" href="#home" aria-label="Onmid">
@@ -45,7 +46,7 @@
         <div class="hero-orb hero-orb-right" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-content">
-            <p class="hero-pretitle">Mais que uma agencia digital</p>
+            <p class="hero-pretitle">Mais que uma agência de</p>
             <h1>Marketing, vendas e tecnologia para crescer.</h1>
             <div class="hero-underline" aria-hidden="true"></div>
             <p class="hero-lead">A Onmid integra estratégia, performance, conteúdo, automação e operação comercial para transformar presença digital em resultado.</p>
@@ -54,7 +55,7 @@
               <a class="btn btn-ghost" href="#method">Conhecer o método</a>
             </div>
           </div>
-          <div class="hero-visual" aria-label="Ecossistema Onmid">
+          <div class="hero-visual" data-parallax="0.16" aria-label="Ecossistema Onmid">
             <div class="visual-backdrop"></div>
             <div class="visual-device">
               <img src="assets/hero-person.png" alt="Profissional segurando tablet em ambiente tecnológico">
@@ -102,6 +103,10 @@
               </div>
             </article>
           </div>
+          <div class="scroll-cue" aria-hidden="true">
+            <span></span>
+            desça para conhecer a operação
+          </div>
         </div>
       </section>
 
@@ -130,6 +135,55 @@
           <div class="intro-copy">
             <p>A Onmid conecta estratégia, criação, mídia, tecnologia e vendas para que cada campanha tenha direção, execução e acompanhamento real.</p>
             <p>Nosso trabalho começa entendendo a cultura da empresa e termina ajustando o funil para vender mais com previsibilidade.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience">
+        <div class="container experience-grid">
+          <div class="experience-copy">
+            <p class="eyebrow">Operação integrada</p>
+            <h2>Cada etapa aparece, conversa e evolui.</h2>
+            <p>Em vez de campanhas isoladas, a Onmid organiza uma jornada conectada: estratégia, aquisição, conteúdo, vendas e automação andando com a mesma leitura de dados.</p>
+          </div>
+          <div class="phone-stage" data-parallax="0.1" aria-label="Fluxo operacional Onmid">
+            <div class="phone-shell">
+              <div class="phone-top"></div>
+              <div class="phone-screen">
+                <div class="screen-pill">Onmid Growth</div>
+                <div class="screen-stat">
+                  <span>Pipeline</span>
+                  <strong>+32%</strong>
+                </div>
+                <div class="screen-bars">
+                  <span style="height: 48%"></span>
+                  <span style="height: 72%"></span>
+                  <span style="height: 38%"></span>
+                  <span style="height: 88%"></span>
+                  <span style="height: 64%"></span>
+                </div>
+                <div class="screen-card">Conteúdo aprovado</div>
+                <div class="screen-card">Tráfego em otimização</div>
+                <div class="screen-card">CRM sincronizado</div>
+              </div>
+            </div>
+          </div>
+          <div class="story-steps">
+            <article>
+              <span>01</span>
+              <h3>Diagnóstico claro</h3>
+              <p>Mapeamos marca, canais, funil, dados e gargalos antes de acelerar.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Execução coordenada</h3>
+              <p>Conteúdo, mídia e vendas deixam de competir e passam a operar juntos.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Melhoria contínua</h3>
+              <p>Relatórios, reuniões e testes mantêm o crescimento em movimento.</p>
+            </article>
           </div>
         </div>
       </section>

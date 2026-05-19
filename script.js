@@ -2,9 +2,29 @@ const siteHeader = document.getElementById("siteHeader");
 const menuButton = document.getElementById("menuButton");
 const mobileNav = document.getElementById("mobileNav");
 const contactForm = document.getElementById("contactForm");
+const scrollProgress = document.getElementById("scrollProgress");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function updateHeader() {
   siteHeader.classList.toggle("scrolled", window.scrollY > 24);
+}
+
+function updateScrollEffects() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${Math.min(progress * 100, 100)}%`;
+  }
+
+  if (!prefersReducedMotion) {
+    document.querySelectorAll("[data-parallax]").forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+      const strength = Number(element.dataset.parallax || 0);
+      element.style.setProperty("--parallax", (center * strength).toFixed(2));
+    });
+  }
 }
 
 function closeMenu() {
@@ -52,4 +72,30 @@ contactForm.addEventListener("submit", (event) => {
 });
 
 window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("scroll", updateScrollEffects, { passive: true });
+window.addEventListener("resize", updateScrollEffects);
+
+const revealTargets = document.querySelectorAll(
+  ".hero-content, .hero-visual, .hero-feature-card, .clients-section, .intro-grid, .experience-copy, .phone-stage, .story-steps article, .section-header, .solution-card, .method-copy, .timeline article, .case-card, .location-strip, .faq-grid, .contact-card"
+);
+
+revealTargets.forEach((element) => element.classList.add("reveal"));
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.16,
+    rootMargin: "0px 0px -8% 0px"
+  }
+);
+
+revealTargets.forEach((element) => revealObserver.observe(element));
+
 updateHeader();
+updateScrollEffects();
